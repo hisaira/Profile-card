@@ -1,0 +1,144 @@
+@import 'font';
+@import 'variable';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @include kumbh();
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: $darkCyan;
+
+    img[class="top"]{
+        position: absolute;
+        height: 800px;
+        left: -20%;
+        top: -60%;
+    }
+
+    img[class="bottom"]{
+        position: absolute;
+        height: 800px;
+        right: -20%;
+        bottom: -60%;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        width: 300px;
+        height:auto;
+        overflow: hidden;
+        border-radius: 24px;
+        box-shadow: 0 0 18px hsla(229, 23%, 23%, 0.8);
+
+        .header {
+            top: 0;
+            width: 100%;
+            height: 130px;
+            background-image: url('/images/bg-pattern-card.svg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        img {
+            position: absolute;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 80px;
+            border: 6px solid white;
+        }
+
+        .card-container {
+            padding: 24px;
+            padding-top: 60px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2 {
+                font-size: 18px;
+                color: $desaturatedBlue;
+                margin-bottom: 6px;
+
+                .age {
+                    font-weight: 400;
+                    color: $darkGrayisBlue;
+                }
+            }
+
+            .location {
+                font-size: 14px;
+                color: $darkGrayisBlue;
+                margin-bottom: 24px;
+            }
+
+            hr {
+                width: 100%;
+                background-color: $darkGrayisBlue;
+                margin-bottom: 24px;
+            }
+
+            .data-list {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .data {
+                    margin: 0 24px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    h4 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: $desaturatedBlue;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $darkGrayisBlue;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 567px) {
+    section {
+        img[class="top"]{
+            position: absolute;
+            height: 400px;
+            left: -50%;
+            top: -30%;
+        }
+    
+        img[class="bottom"]{
+            position: absolute;
+            height: 400px;
+            right: -50%;
+            bottom: -30%;
+        }
+    }
+}
